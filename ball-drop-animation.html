@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div>
+      <div class="state">
+        <div class="ball-cont">
+          <div class="ball">
+            <img src="images/white-ball.svg" alt="" />
+          </div>
+          <div class="ball-two">
+            <img src="images/blue-ball.svg" alt="" />
+          </div>
+          <div class="ball-three">
+            <img src="images/blue-ball.svg" alt="" />
+          </div>
+          <div class="ball-four">
+            <img src="images/white-ball.svg" alt="" />
+          </div>
+          <div class="ball-five">
+            <img src="images/white-ball.svg" alt="" />
+          </div>
+
+          <div class="ball-six">
+            <img src="images/blue-ball.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get references to ball elements
+      const balls = document.querySelectorAll(
+        ".ball-four, .ball-five, .ball-six"
+      );
+
+      balls.forEach((ball) => {
+        ball.addEventListener("animationend", () => {
+          ball.classList.add("out-of-box");
+        });
+      });
+    </script>
+  </body>
+</html>

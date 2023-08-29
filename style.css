@@ -1,0 +1,140 @@
+body {
+  margin: 300px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* body > div {
+  width: 250px;
+  padding: 50px 0;
+  background-color: red;
+  z-index: 999;
+} */
+.state {
+  position: relative;
+  /* background: url("https://s16.postimg.org/fbg4rf91h/post-1.jpg"); */
+  width: 176px;
+  height: 120px;
+  border-radius: 140px;
+  background-image: url("images/01.png");
+  z-index: 999;
+}
+.ball,
+.ball-two,
+.ball-three,
+.ball-four,
+.ball-five,
+.ball-six {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: ball-y 1s;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: ball-y 1s;
+  -moz-transform-origin: 50% 50%;
+}
+.ball {
+  position: absolute;
+  top: 80px;
+  left: 70px;
+}
+.ball-two {
+  top: 50px;
+  left: 100px;
+}
+.ball-three {
+  top: 50px;
+  left: 0;
+}
+.ball-four {
+  top: 90px;
+  left: 100px;
+}
+.ball-five {
+  top: 90px;
+  left: 40px;
+}
+.ball-six {
+  top: 60px;
+  left: 135px;
+}
+
+.state .ball-cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-animation: ball-x 2s cubic-bezier(0, 0, 0.35, 1);
+  -moz-animation: ball-x 2s cubic-bezier(0, 0, 0.35, 1);
+}
+
+@-webkit-keyframes ball-x {
+  0% {
+    -webkit-transform: translateY(-20px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes ball-y {
+  0% {
+    -webkit-transform: translateY(-100px);
+    -webkit-animation-timing-function: ease-in;
+  }
+  28% {
+    -webkit-transform: translateY(-50px);
+    -webkit-animation-timing-function: ease-in;
+  }
+  56% {
+    -webkit-transform: translateY(-36px);
+    -webkit-animation-timing-function: ease-in;
+  }
+  84% {
+    -webkit-transform: translateY(-25px);
+    -webkit-animation-timing-function: ease-in;
+  }
+  14%,
+  42%,
+  75%,
+  100% {
+    -webkit-transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+  }
+}
+
+/* ==== ball out the box ===== */
+
+@keyframes out-of-the-box-ball-five {
+  0% {
+    transform: translateX(-120px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.ball-five,
+.ball-four {
+  animation: ball-y 2s;
+  transition: top 0.3s ease, opacity 0.3s ease;
+}
+.ball-six {
+  animation: ball-y 2s;
+  transition: left 0.3s ease, opacity 0.3s ease;
+}
+
+.ball-five.out-of-box,
+.ball-four.out-of-box {
+  top: 120px;
+  opacity: 0;
+  animation: none;
+}
+.ball-six.out-of-box {
+  left: 200px;
+  opacity: 0;
+  animation: none;
+}
